@@ -1,7 +1,9 @@
 extends ./layouts/index
 
 block contenido
-    main.nosotros
-        .container
+    main.viajes
+        .viajes__container
             h1 #{pagina}
-            
+            .viajes__proximos
+                h2.viajes__heading Próximos Viajes
+                    each viaje in viajes

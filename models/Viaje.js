@@ -19,5 +19,11 @@ export const Viaje = db.define("viajes", {
     },
     descripcion: {
         type: Sequelize.STRING
+    },
+    disponibles: {
+        type: Sequelize.SMALLINT
+    },
+    slug: {
+        type: Sequelize.STRING
     }
 });
