@@ -17,7 +17,6 @@ const paginaComentarios = (req, res)=> {
 const paginaViajes = async (req, res) => {
     //Consultar la base de datos
     const viajes = await Viaje.findAll();
-    
     res.render("viajes", {
         pagina: "Viajes",
         viajes
@@ -28,5 +27,7 @@ const paginaGaleria = (req, res) => {
         pagina: "Galeria"
     });
 }
-
-export { paginaInicio, paginaNosotros, paginaComentarios, paginaViajes, paginaGaleria } 
+const paginaDetalleViaje = (req, res) => {
+    console.log("PIPO");
+}
+export { paginaInicio, paginaNosotros, paginaComentarios, paginaViajes, paginaGaleria, paginaDetalleViaje } 
