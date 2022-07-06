@@ -15,6 +15,7 @@ const paginaComentarios = (req, res)=> {
     });
 }
 const paginaViajes = async (req, res) => {
+    
     //Consultar la base de datos
     const viajes = await Viaje.findAll();
     res.render("viajes", {
@@ -27,7 +28,22 @@ const paginaGaleria = (req, res) => {
         pagina: "Galeria"
     });
 }
-const paginaDetalleViaje = (req, res) => {
-    console.log("PIPO");
+const paginaDetalleViaje = async (req, res) => {
+    const { slug } = req.params;
+    try {
+        const resultado = await Viaje.findOne({ where: { slug: slug } });
+        res.render("viaje", {
+            pagina: "Información Viaje",
+            resultado
+        });
+    } catch (error) {
+        console.log("Error ver detalles");
+        console.log(error)
+    }
 }
-export { paginaInicio, paginaNosotros, paginaComentarios, paginaViajes, paginaGaleria, paginaDetalleViaje } 
+const paginaContacto = (req, res) =>{
+    res.render("contacto", {
+        pagina: "Contacto"
+    });
+}
+export { paginaInicio, paginaNosotros, paginaComentarios, paginaViajes, paginaGaleria, paginaDetalleViaje, paginaContacto } 

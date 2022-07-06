@@ -2,5 +2,18 @@ extends ./layouts/index
 
 block contenido
     .main
-        .container
-            h1 #{pagina}
+        .comentarios.container
+            h1.comentarios__heading #{pagina}
+            .comentarios__contenido
+                h2.comentarios__subtitulo Agrega un testimonial
+                form(action="/  testimoniales" method="POST").formulario
+                    .formulario__contenido
+                        label(for="nombre") Nombre
+                        input#nombre(type="text", placeholder="Tu nombre", name="nombre" class="formulario__input")
+                    .formulario__contenido
+                        label(for="email") Correo Eléctrónico
+                        input#nombre(type="email", placeholder="Tu correo electrónico", name="email" class="formulario__input")
+                    .formulario__contenido
+                        label(for="(mensaje)") Mensaje
+                        textarea#mensaje(name="mensaje", class="formulario__input" placeholder="Tu mensaje" rows=4)
+                    input.formulario__submit(type="submit")

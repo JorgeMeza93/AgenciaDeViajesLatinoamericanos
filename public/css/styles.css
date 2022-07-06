@@ -202,3 +202,73 @@ img{
     margin: 0;
     padding: 1rem 0;
 }
+
+/* Comentarios */
+.comentarios{
+    background-color: #0a91521d;
+    padding-bottom: 3rem;
+}
+.comentarios__heading{
+    text-align: center;
+    margin: 0;
+    padding: 8rem 0;
+}
+@media(min-width: 1024px){
+    .comentarios__heading{
+        padding: 5rem 0;
+    }
+}
+.comentarios__subtitulo{
+    margin: 0 0 3rem 0;
+    text-align: center;
+
+    color: #0a9153
+}
+.formulario{
+    width: 90%;
+    margin: 0 auto;
+}
+.formulario__contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    margin: 2rem auto;
+}
+@media(min-width: 1024px){
+    .formulario__contenido{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.formulario__input {
+    padding: 1rem .5rem;
+    width: 100%;
+    border-radius: .8rem;
+}
+@media(min-width: 1024px){
+    .formulario__input{
+        width: 80%;
+    }
+}
+.formulario__submit{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: center;
+    background-color: #0a9153;
+    border: none;
+    border-radius: .8rem;
+    color: var(--blanco);
+    transform: background-color;
+    transition-duration: .4s;
+}
+@media(min-width: 1024px){
+    .formulario__submit{
+        width: 65%;
+        margin: 4rem auto;
+    }
+}
+.formulario__submit:hover{
+    background-color: #076439;
+}
