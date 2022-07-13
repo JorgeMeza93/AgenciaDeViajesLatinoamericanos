@@ -4,16 +4,28 @@ block contenido
     .main
         .comentarios.container
             h1.comentarios__heading #{pagina}
+            .comentarios__lista
+                h3 Lee sobre nuestros clientes y sus experiencias
+                .comentarios__experiencias
+                    each comentario in comentarios
+                        .experiencia
+                            .experiencia__card
+                                h4 #{comentario.nombre}
+                                .card__body
+                                    p #{comentario.mensaje}
             .comentarios__contenido
                 h2.comentarios__subtitulo Agrega un testimonial
-                form(action="/  testimoniales" method="POST").formulario
+                if(error)
+                    .errores=error
+
+                form(action="/comentarios" method="POST").formulario
                     .formulario__contenido
                         label(for="nombre") Nombre
-                        input#nombre(type="text", placeholder="Tu nombre", name="nombre" class="formulario__input")
+                        input#nombre(type="text", placeholder="Tu nombre", name="nombre" class="formulario__input" value=nombre)
                     .formulario__contenido
                         label(for="email") Correo Eléctrónico
-                        input#nombre(type="email", placeholder="Tu correo electrónico", name="email" class="formulario__input")
+                        input#nombre(type="email", placeholder="Tu correo electrónico", name="email" class="formulario__input" value=email)
                     .formulario__contenido
-                        label(for="(mensaje)") Mensaje
-                        textarea#mensaje(name="mensaje", class="formulario__input" placeholder="Tu mensaje" rows=4)
+                        label(for="mensaje") Mensaje
+                        textarea#mensaje(name="mensaje", class="formulario__input" placeholder="Tu mensaje" rows=4 )=mensaje
                     input.formulario__submit(type="submit")

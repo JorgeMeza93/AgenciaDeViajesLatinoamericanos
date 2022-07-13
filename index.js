@@ -17,6 +17,8 @@ app.use( (req, res, next) => {
     res.locals.nombreSitio = "Agencia de Viajes";
     return next();
 })
+//Agregar body parser para leer los datos del formulario
+app.use(express.urlencoded({ extended: true }));
 // Definimos la carpeta publica que contiene las hojas de estilo y las imágenes
 app.use(express.static("public"));
 app.use("/", router);
