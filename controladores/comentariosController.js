@@ -8,7 +8,7 @@ const guardarComentario = async (req, res) => {
     mensaje = mensaje ?? "";
     const vacios = nombre.trim() === "" || email.trim() === "" || mensaje.trim() === "" ? true : false;
     if(vacios){
-        const comentarios = await Comentario.findALL();
+        const comentarios = await Comentario.findAll();
         res.render("comentarios", {
             pagina: "Comentarios",
             error: "Todos los campos son obligatorios",

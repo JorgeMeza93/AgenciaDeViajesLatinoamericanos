@@ -1,5 +1,7 @@
 :root {
     --colorPrincipal: #0a9153;
+    --colorSecundario: #ffe100;
+    --colorTerciario: #1d81f4;
     --blanco: #fff;
     --negro: #000000;
     --gradientePrincipal: linear-gradient(to right, rgba(9,87,61,1) 0%, rgba(10,145,83,1) 50%, rgba(29,129,244,1) 100%);
@@ -291,9 +293,61 @@ img{
 }
 
 /* Comentarios */
+.comentarios__experiencias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+}
+
+
+
 .errores{
     padding: 1.5rem 0;
     color: var(--blanco);
     text-align: center;
     background-color: #f04e4e;
+}
+
+/* Inicio */
+.home{
+    position: relative;
+    
+}
+
+.home .header{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: none;
+}
+.slider{
+    background-image: url(../img/rio-de-janeiro.jpeg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.slider h1 {
+    color: rgba(255, 255, 255, .5);
+}
+.slider em {
+    font-size: 4rem;
+    order: -1;
+    line-height: .8;
+    color: var(--colorSecundario)
+    
+}
+@media (min-width:768px) {
+    .slider em {
+        font-size: 8rem;
+    }
+}
+.footer{
+    background-image: var(--gradientePrincipal);
+    height: 30vh;
 }
